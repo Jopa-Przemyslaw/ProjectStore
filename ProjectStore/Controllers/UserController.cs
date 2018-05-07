@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
-using ProjectStore.Models;
-using ProjectStore.Models.ViewsModels;
+using ProjectStore.DAL;
 using ProjectStore.Models.ViewsModels.User;
 
 namespace ProjectStore.Controllers

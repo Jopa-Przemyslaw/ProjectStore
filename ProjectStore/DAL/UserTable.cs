@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjectStore.Models
+namespace ProjectStore.DAL
 {
     using System;
     using System.Collections.Generic;

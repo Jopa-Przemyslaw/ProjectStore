@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\PeCet\OneDrive\Sem IV\dotNET\ProjectStore\ProjectStore\Models\CollectionDBEntity.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Przemyslaw Jopa\OneDrive\Sem IV\dotNET\ProjectStore\ProjectStore\DAL\CollectionDBEntity.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

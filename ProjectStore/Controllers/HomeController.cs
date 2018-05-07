@@ -1,13 +1,6 @@
-﻿using Microsoft.ApplicationInsights.Extensibility.Implementation;
-using ProjectStore.Models;
-using ProjectStore.Models.ViewsModels;
-using ProjectStore.Models.ViewsModels.Collection;
+﻿using ProjectStore.DAL;
 using ProjectStore.Models.ViewsModels.Home;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity.Validation;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace ProjectStore.Controllers

@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjectStore.Models
+namespace ProjectStore.DAL
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class UserDBEntities1 : DbContext
+    public partial class UserDBEntities : DbContext
     {
-        public UserDBEntities1()
-            : base("name=UserDBEntities1")
+        public UserDBEntities()
+            : base("name=UserDBEntities")
         {
         }
     
@@ -25,6 +25,6 @@ namespace ProjectStore.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<CollectionTable> CollectionTables { get; set; }
+        public virtual DbSet<UserTable> UserTables { get; set; }
     }
 }

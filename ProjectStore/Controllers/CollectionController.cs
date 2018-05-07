@@ -1,10 +1,7 @@
-﻿using ProjectStore.Models;
+﻿using ProjectStore.DAL;
 using ProjectStore.Models.ViewsModels.Collection;
 using ProjectStore.Models.ViewsModels.Home;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace ProjectStore.Controllers

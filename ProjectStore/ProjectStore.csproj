@@ -157,22 +157,22 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\CollectionDBEntity.Context.cs">
+    <Compile Include="DAL\CollectionDBEntity.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CollectionDBEntity.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CollectionDBEntity.cs">
+    <Compile Include="DAL\CollectionDBEntity.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CollectionDBEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CollectionDBEntity.Designer.cs">
+    <Compile Include="DAL\CollectionDBEntity.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CollectionDBEntity.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\CollectionTable.cs">
+    <Compile Include="DAL\CollectionTable.cs">
       <DependentUpon>CollectionDBEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ViewsModels\Collection\CollectionDetailsVM.cs" />
@@ -181,24 +181,24 @@
     <Compile Include="Models\ViewsModels\Home\CustomersVM.cs" />
     <Compile Include="Models\ViewsModels\Collection\CollectionEditVM.cs" />
     <Compile Include="Models\ViewsModels\User\LoginVM.cs" />
-    <Compile Include="Models\UserDBEntity.Context.cs">
+    <Compile Include="DAL\UserDBEntity.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UserDBEntity.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\UserDBEntity.cs">
+    <Compile Include="DAL\UserDBEntity.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UserDBEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\UserDBEntity.Designer.cs">
+    <Compile Include="DAL\UserDBEntity.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UserDBEntity.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\ViewsModels\Collection\CollectionTableVM.cs" />
     <Compile Include="Models\ViewsModels\Home\UserDetailsVM.cs" />
-    <Compile Include="Models\UserTable.cs">
+    <Compile Include="DAL\UserTable.cs">
       <DependentUpon>UserDBEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ViewsModels\User\RegisterVM.cs" />
@@ -216,22 +216,22 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\CollectionDBEntity.Context.tt">
+    <Content Include="DAL\CollectionDBEntity.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CollectionDBEntity.edmx</DependentUpon>
       <LastGenOutput>CollectionDBEntity.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\CollectionDBEntity.tt">
+    <Content Include="DAL\CollectionDBEntity.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CollectionDBEntity.edmx</DependentUpon>
       <LastGenOutput>CollectionDBEntity.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\UserDBEntity.Context.tt">
+    <Content Include="DAL\UserDBEntity.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>UserDBEntity.Context.cs</LastGenOutput>
       <DependentUpon>UserDBEntity.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\UserDBEntity.tt">
+    <Content Include="DAL\UserDBEntity.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>UserDBEntity.edmx</DependentUpon>
       <LastGenOutput>UserDBEntity.cs</LastGenOutput>
@@ -241,18 +241,18 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="Models\UserDBEntity.edmx">
+    <EntityDeploy Include="DAL\UserDBEntity.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>UserDBEntity.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\UserDBEntity.edmx.diagram">
+    <Content Include="DAL\UserDBEntity.edmx.diagram">
       <DependentUpon>UserDBEntity.edmx</DependentUpon>
     </Content>
-    <EntityDeploy Include="Models\CollectionDBEntity.edmx">
+    <EntityDeploy Include="DAL\CollectionDBEntity.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>CollectionDBEntity.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\CollectionDBEntity.edmx.diagram">
+    <Content Include="DAL\CollectionDBEntity.edmx.diagram">
       <DependentUpon>CollectionDBEntity.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
