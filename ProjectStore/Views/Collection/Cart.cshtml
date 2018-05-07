@@ -1,0 +1,59 @@
+﻿@model ProjectStore.Models.ViewsModels.Home.CartVM
+
+@{
+    ViewBag.Title = "Shopping Cart Page";
+}
+
+<h2>@ViewBag.Title</h2>
+<h3>@ViewBag.Message</h3>
+
+@using (Html.BeginForm())
+{
+    <div class="container">
+        <table class="table table-striped">
+            @foreach (var item in Model.collectionList)
+            {
+                <tr>
+                    <th>@Html.DisplayNameFor(model => item.Title)</th>
+                    <th>@Html.DisplayNameFor(model => item.Type)</th>
+                    <th>
+                        @Html.DisplayNameFor(model => item.Author)
+                        /
+                        @Html.DisplayNameFor(model => item.Director)
+                    </th>
+                    <th>@Html.DisplayNameFor(model => item.DateReleased)</th>
+                    <th>@Html.DisplayNameFor(model => item.Price)</th>
+                </tr>
+                break;
+            }
+
+            @foreach (var item in Model.collectionList)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(model => item.Title)</td>
+                    <td>@Html.DisplayFor(model => item.Type)</td>
+                    <td>
+                        @if (item.Author != null)
+                        {
+                            @Html.DisplayFor(model => item.Author)
+                        }
+                        else
+                        {
+                            @Html.DisplayFor(model => item.Director)
+                        }
+                    </td>
+                    <td>@Html.DisplayFor(model => item.DateReleased)</td>
+                    <td>
+                        @Html.DisplayFor(model => item.Price)
+                        <span class="glyphicon glyphicon-euro"></span>
+                    </td>
+                    <td>@Html.ActionLink("Remove", "Remove2", new { id = item.Id })</td>
+                </tr>
+            }
+        </table>
+    </div>
+}
+
+<p>
+    <input type="submit" value="Buy" class="btn btn-default" />
+</p>

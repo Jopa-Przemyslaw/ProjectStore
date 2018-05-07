@@ -1,0 +1,47 @@
+﻿@model ProjectStore.Models.ViewsModels.Home.CustomersVM
+@*@model IEnumerable<ProjectStore.Models.ViewsModels.Home.CustomersVM>*@
+@{
+    ViewBag.Title = "Customers Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<div>CUSTOMERS</div>
+
+<div class="container">
+    <div>
+        <hr />
+        <table class="table-condensed table-striped">
+            @foreach (var item in Model.UserTables)
+            {
+                <tr class="table-bordered">
+                    <th>@Html.DisplayNameFor(model => item.Username)</th>
+                    <th>@Html.DisplayNameFor(model => item.Age)</th>
+                    <th>@Html.DisplayNameFor(model => item.FirstName)</th>
+                    <th>Details</th>
+                    <td>|</td>
+                    <th>Edit</th>
+                    <td>|</td>
+                    <th>Remove</th>
+                </tr>
+                break;
+            }
+
+            @foreach (var u in Model.UserTables)
+            {
+                <tr>
+                    <th>@Html.DisplayFor(m => u.Username)</th>
+                    <th>@Html.DisplayFor(m => u.Age)</th>
+                    <th>@Html.DisplayFor(m => u.FirstName)</th>
+                    <td>@Html.ActionLink("Details", "Details", new { id = u.UserID })</td>
+                    <td>|</td>
+                    <td>@Html.ActionLink("Edit", "Edit", new { id = u.UserID })</td>
+                    <td>|</td>
+                    <td>@Html.ActionLink("Remove", "Remove", new { id = u.UserID })</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

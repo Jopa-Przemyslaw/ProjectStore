@@ -1,0 +1,45 @@
+﻿@model ProjectStore.Models.ViewsModels.Home.UserDetailsVM
+
+@{
+    ViewBag.Title = "Details Page";
+}
+
+<h2>@ViewBag.Title</h2>
+<h3>@ViewBag.Message</h3>
+
+<div class="container">
+    <table class="table-condensed">
+        <tr>
+            <th style="text-align:right">@Html.DisplayNameFor(m => m.UserID): </th>
+            <td class="col-md-10">@Html.DisplayFor(m => Model.UserID)</td>
+        </tr>
+        <tr>
+            <th style="text-align:right">@Html.DisplayNameFor(m => m.Username): </th>
+            <td class="col-md-10">@Html.DisplayFor(m => Model.Username)</td>
+        </tr>
+        <tr>
+            <th style="text-align:right">@Html.DisplayNameFor(m => m.Password): </th>
+            <td class="col-md-10">@Html.DisplayFor(m => Model.Password)</td>
+        </tr>
+        <tr>
+            <th style="text-align:right">@Html.DisplayNameFor(m => m.IsAdmin): </th>
+            <td class="col-md-10">@Html.DisplayFor(m => Model.IsAdmin)</td>
+        </tr>
+        <tr>
+            <th style="text-align:right">@Html.DisplayNameFor(m => m.Age): </th>
+            <td class="col-md-10">@Html.DisplayFor(m => Model.Age)</td>
+        </tr>
+        <tr>
+            <th style="text-align:right">@Html.DisplayNameFor(m => m.FirstName): </th>
+            <td class="col-md-10">@Html.DisplayFor(m => Model.FirstName)</td>
+        </tr>
+        <tr>
+            <th style="text-align:right">@Html.DisplayNameFor(m => m.LastName): </th>
+            <td class="col-md-10">@Html.DisplayFor(m => Model.LastName)</td>
+        </tr>
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserID }) |
+    @Html.ActionLink("Back to List", "Customers")
+</p>

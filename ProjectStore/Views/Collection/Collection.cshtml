@@ -1,0 +1,68 @@
+﻿@model ProjectStore.Models.ViewsModels.Collection.CollectionTableVM
+@{
+    ViewBag.Title = "Collection Page";
+}
+
+<h2>@ViewBag.Title</h2>
+<h3>@ViewBag.Message</h3>
+
+@if (Request.IsAuthenticated)
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
+@using (Html.BeginForm())
+{
+    <table class="table table-striped">
+        @foreach (var item in Model.CollectionTables)
+        {
+            <tr>
+                <th>@Html.DisplayNameFor(model => item.Title)</th>
+                <th>@Html.DisplayNameFor(model => item.Type)</th>
+                <th>
+                    @Html.DisplayNameFor(model => item.Author)
+                    /
+                    @Html.DisplayNameFor(model => item.Director)
+                </th>
+                <th>@Html.DisplayNameFor(model => item.DateReleased)</th>
+                <th>@Html.DisplayNameFor(model => item.Price)</th>
+                <th></th>
+            </tr>
+            break;
+        }
+
+        @foreach (var item in Model.CollectionTables)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                <td>@Html.DisplayFor(modelItem => item.Type)</td>
+                <td>
+                    @if (item.Author != null)
+                    {
+                        @Html.DisplayFor(model => item.Author)
+                    }
+                    else
+                    {
+                        @Html.DisplayFor(model => item.Director)
+                    }
+                </td>
+                <td>@Html.DisplayFor(model => item.DateReleased)</td>
+                <td>
+                    @Html.ActionLink("Add", "Add", new { id = item.Id })
+                    @Html.DisplayFor(model => item.Price)
+                    <span class="glyphicon glyphicon-euro"></span>
+                </td>
+                @if (Request.IsAuthenticated)
+                {
+                    <td>
+                        @Html.ActionLink("Details", "Details1", new { id = item.Id }) |
+                        @Html.ActionLink("Edit", "Edit1", new { id = item.Id }) |
+                        @Html.ActionLink("Remove", "Remove1", new { id = item.Id })
+                    </td>
+                }
+            </tr>
+        }
+
+    </table>
+}
