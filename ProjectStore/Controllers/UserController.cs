@@ -6,9 +6,15 @@ using ProjectStore.Models.ViewsModels.User;
 
 namespace ProjectStore.Controllers
 {
+    /// <summary>
+    /// User controller.
+    /// </summary>
     public class UserController : Controller
     {
-        // GET: User
+        /// <summary>
+        /// Register new user.
+        /// </summary>
+        /// <returns>Action Register.</returns>
         [HttpGet]
         [AllowAnonymous]
         public ActionResult Register()
@@ -17,6 +23,12 @@ namespace ProjectStore.Controllers
             RegisterVM user = new RegisterVM();
             return View(user);
         }
+
+        /// <summary>
+        /// Register new user.
+        /// </summary>
+        /// <param name="user">User of type RegisterVM.</param>
+        /// <returns>Login View.</returns>
         [HttpPost]
         public ActionResult Register(RegisterVM user)
         {
@@ -34,12 +46,23 @@ namespace ProjectStore.Controllers
             ViewBag.SuccessMessage = "Registration Successful.";
             return View("Login", new LoginVM());
         }
+
+        /// <summary>
+        /// Login user.
+        /// </summary>
+        /// <returns>Action Login.</returns>
         [AllowAnonymous]
         public ActionResult Login()
         {
             ViewBag.Message = "Welcome! It's your login time.";
             return View();
         }
+
+        /// <summary>
+        /// Login user.
+        /// </summary>
+        /// <param name="login">User of type LoginVM.</param>
+        /// <returns>Login View.</returns>
         [HttpPost]
         public ActionResult Login(LoginVM login)
         {
@@ -59,6 +82,11 @@ namespace ProjectStore.Controllers
             ModelState.Remove("Password");
             return View();
         }
+
+        /// <summary>
+        /// Logout user.
+        /// </summary>
+        /// <returns>Login View.</returns>
         [Authorize]
         public ActionResult Logout()
         {

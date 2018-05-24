@@ -6,10 +6,17 @@ using System.Web.Mvc;
 
 namespace ProjectStore.Controllers
 {
+    /// <summary>
+    /// Collection controller.
+    /// </summary>
     public class CollectionController : Controller
     {
         CartVM shoppingCart = new CartVM();
 
+        /// <summary>
+        /// Show collection view.
+        /// </summary>
+        /// <returns>Collection View.</returns>
         [AllowAnonymous]
         public ActionResult Collection()
         {
@@ -18,6 +25,12 @@ namespace ProjectStore.Controllers
 
             return View("Collection", collection);
         }
+
+        /// <summary>
+        /// Show details of item from collection.
+        /// </summary>
+        /// <param name="id">Id of item from collection.</param>
+        /// <returns>Detail View for an item.</returns>
         [Authorize]
         public ActionResult Details1(int id)
         {
@@ -27,6 +40,12 @@ namespace ProjectStore.Controllers
             CollectionDetailsVM collectionDetailsVM = new CollectionDetailsVM(art);
             return View("Details1", collectionDetailsVM);
         }
+
+        /// <summary>
+        /// Edit item from collection.
+        /// </summary>
+        /// <param name="id">Id of item from collection.</param>
+        /// <returns>Action Edit.</returns>
         [Authorize]
         public ActionResult Edit1(int id)
         {
@@ -35,6 +54,12 @@ namespace ProjectStore.Controllers
             CollectionEditVM collectionDetailsVM = new CollectionEditVM(art);
             return View("Edit1", collectionDetailsVM);
         }
+        
+        /// <summary>
+        /// Edit item from collection.
+        /// </summary>
+        /// <param name="art">Element from collection of type CollectionEditVM.</param>
+        /// <returns>Collection Action.</returns>
         [HttpPost]
         public ActionResult Edit1(CollectionEditVM art)
         {
@@ -49,6 +74,12 @@ namespace ProjectStore.Controllers
             db.SaveChanges();
             return Collection();
         }
+
+        /// <summary>
+        /// Remove item from collection.
+        /// </summary>
+        /// <param name="id">Id of item from collection.</param>
+        /// <returns>Collection Action.</returns>
         [Authorize]
         public ActionResult Remove1(int id)
         {
@@ -59,6 +90,12 @@ namespace ProjectStore.Controllers
             db.SaveChanges();
             return Collection();
         }
+
+        /// <summary>
+        /// Remove item from shopping cart.
+        /// </summary>
+        /// <param name="id">Id of item from collection.</param>
+        /// <returns>Cart Action.</returns>
         [AllowAnonymous]
         public ActionResult Remove2(int id)
         {
@@ -72,6 +109,11 @@ namespace ProjectStore.Controllers
             Session["shoppingCart"] = shoppingCart;
             return Cart();
         }
+
+        /// <summary>
+        /// Show shopping cart view.
+        /// </summary>
+        /// <returns>Shopping cart View.</returns>
         [AllowAnonymous]
         public ActionResult Cart()
         {
@@ -81,6 +123,12 @@ namespace ProjectStore.Controllers
                 Session["shoppingCart"] = new CartVM();
             return View("Cart", (CartVM)Session["shoppingCart"]);
         }
+
+        /// <summary>
+        /// Add item to shopping cart.
+        /// </summary>
+        /// <param name="id">Id of item from collection.</param>
+        /// <returns>Collection View.</returns>
         [AllowAnonymous]
         public ActionResult Add(int id)
         {
@@ -94,6 +142,11 @@ namespace ProjectStore.Controllers
             Session["shoppingCart"] = shoppingCart;
             return Collection();
         }
+
+        /// <summary>
+        /// Create new item to collection.
+        /// </summary>
+        /// <returns>Action Create.</returns>
         [Authorize]
         public ActionResult Create()
         {
@@ -101,6 +154,12 @@ namespace ProjectStore.Controllers
             CreateVM ct = new CreateVM();
             return View(ct);
         }
+
+        /// <summary>
+        /// Create new item to collection.
+        /// </summary>
+        /// <param name="ct">Element of type CreateVM.</param>
+        /// <returns>Create View.</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(CreateVM ct)

@@ -2,6 +2,9 @@
 
 namespace ProjectStore.Models.ViewsModels.Home
 {
+    /// <summary>
+    /// User View Model for Editing.
+    /// </summary>
     public class UserEditVM : UserTable
     {
         public UserEditVM() : base() { }

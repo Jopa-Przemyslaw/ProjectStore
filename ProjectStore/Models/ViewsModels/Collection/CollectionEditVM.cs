@@ -2,6 +2,9 @@
 
 namespace ProjectStore.Models.ViewsModels.Collection
 {
+    /// <summary>
+    /// CollectionEdit View Model.
+    /// </summary>
     public class CollectionEditVM : CollectionTable
     {
         public CollectionEditVM() : base() { }

@@ -2,6 +2,9 @@
 
 namespace ProjectStore.Models.ViewsModels.Home
 {
+    /// <summary>
+    /// User View Model for showing details.
+    /// </summary>
     public class UserDetailsVM : UserTable
     {
         public UserDetailsVM(UserTable userTable)

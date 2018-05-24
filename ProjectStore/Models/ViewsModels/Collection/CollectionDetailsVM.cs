@@ -2,6 +2,9 @@
 
 namespace ProjectStore.Models.ViewsModels.Collection
 {
+    /// <summary>
+    /// CollectionDetails View Model.
+    /// </summary>
     public class CollectionDetailsVM : CollectionTable
     {
         public CollectionDetailsVM(CollectionTable collectionTable)

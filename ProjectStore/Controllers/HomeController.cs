@@ -5,8 +5,15 @@ using System.Web.Mvc;
 
 namespace ProjectStore.Controllers
 {
+    /// <summary>
+    /// Home controller.
+    /// </summary>
     public class HomeController : Controller
     {
+        /// <summary>
+        /// Show about view.
+        /// </summary>
+        /// <returns>About View.</returns>
         [AllowAnonymous]
         public ActionResult About()
         {
@@ -14,6 +21,11 @@ namespace ProjectStore.Controllers
 
             return View();
         }
+
+        /// <summary>
+        /// Show contact view.
+        /// </summary>
+        /// <returns>Contact View.</returns>
         [AllowAnonymous]
         public ActionResult Contact()
         {
@@ -21,6 +33,11 @@ namespace ProjectStore.Controllers
 
             return View();
         }
+
+        /// <summary>
+        /// Shows customers view.
+        /// </summary>
+        /// <returns>Customers View.</returns>
         [Authorize]
         public ActionResult Customers()
         {
@@ -28,6 +45,12 @@ namespace ProjectStore.Controllers
             CustomersVM customers = new CustomersVM();
             return View("Customers", customers);
         }
+
+        /// <summary>
+        /// Show details of user.
+        /// </summary>
+        /// <param name="id">Id of item from collection.</param>
+        /// <returns>Details View.</returns>
         [Authorize]
         public ActionResult Details(int id)
         {
@@ -37,6 +60,12 @@ namespace ProjectStore.Controllers
             UserDetailsVM userDetailsVM = new UserDetailsVM(user);
             return View("Details", userDetailsVM);
         }
+
+        /// <summary>
+        /// Show details of user.
+        /// </summary>
+        /// <param name="id">Id of item from collection.</param>
+        /// <returns>Action Edit.</returns>
         [Authorize]
         public ActionResult Edit(int id)
         {
@@ -45,6 +74,12 @@ namespace ProjectStore.Controllers
             UserEditVM userEditVM = new UserEditVM(user);
             return View("Edit", userEditVM);
         }
+
+        /// <summary>
+        /// Edit user.
+        /// </summary>
+        /// <param name="user">Element from user list of type UserEditVM.</param>
+        /// <returns>Customers View.</returns>
         [HttpPost]
         public ActionResult Edit(UserEditVM user)
         {
@@ -59,6 +94,12 @@ namespace ProjectStore.Controllers
             db.SaveChanges();
             return Customers();
         }
+
+        /// <summary>
+        /// Remove user.
+        /// </summary>
+        /// <param name="id">Id of item from collection.</param>
+        /// <returns>Customers View.</returns>
         [Authorize]
         public ActionResult Remove(int id)
         {
